@@ -1,5 +1,5 @@
 % Evaluating the performance of CMIP6 models in simulating Southern Ocean
-% biogeochemistry
+% biogeochemistry300
 % Author: Cheng, M., Ellwood, M., and Maher, N. 
 % Last modified: 26/05/2025
 % Regression and statistical nalysis (Section 4.1 and 4.2)
@@ -30,7 +30,7 @@ X = [ones(length(mld_djf),1) mld_djf'];
 p_val1 = stats(3);
 
 % Plot MLD related trends (Fig.S8)
-figs8=figure(1);
+figs7=figure(1);
 set(gcf,'Position',[100 100 1400 600])
 subplot(141)
 hold on
@@ -82,7 +82,7 @@ text(18,72, '(b)', 'FontWeight', 'bold', 'FontSize', 14);
 text(28, 42, sprintf('R^2=%.2f, p=%.3f', R22, p_val2), ...
     'FontSize', 12, 'Color', 'k', 'BackgroundColor', 'none');
 xlabel('MLD (m)')
-ylabel('Integrated chlorophyll in top 100m (mg/m^{2})')
+ylabel('Integrated chlorophyll in top 100m (mg m^{-2})')
 grid on
 box on
 
@@ -116,7 +116,7 @@ ylabel('DCM Frequency (%)')
 grid on
 box on
 
-print(figs8,'D:\OneDrive - Australian National University\PhD\Project2\Model comparison\Figure\figs8','-djpeg','-r300');
+print(figs7,'D:\OneDrive - Australian National University\PhD\Project2\Model comparison\Figure\figs7','-djpeg','-r600');
 
 % Analyse model components related using in 4.2
 % Data
@@ -146,7 +146,7 @@ Chl_D1 = Chl(D == 1);
 [h, p1] = ttest2(Chl_D0, Chl_D1);
 
 % Start plotting (Fig.S9)
-figs9=figure(2);
+fig15=figure(2);
 set(gcf,'Position',[100 100 1400 1000])
 subplot(3,4,1)
 boxplot(Chl,D);
@@ -252,7 +252,7 @@ for i = 1:length(model_longname)
 end
 
 plot(xfit5, yfit5, 'k--', 'LineWidth', 2);
-xlabel('K_{mSi} (mmol/m^{3})')
+xlabel('K_{mSi} (mmol m^{-3})')
 ylabel('Silicate ranking')
 ylim([0 14])
 set(gca,"YDir",'reverse')
@@ -286,7 +286,7 @@ for i = 1:length(model_longname)
         'MarkerEdgeColor', colors(i,:), 'DisplayName', model_longname{i},'LineWidth', 1.5);
 end
 plot(xfit5, yfit5, 'k--', 'DisplayName','Regression','LineWidth', 2);
-xlabel('K_{mNO3} (mmol/m^{3})')
+xlabel('K_{mNO3} (mmol m^{-3})')
 ylabel('Nitrate ranking')
 ylim([0 14])
 set(gca,"YDir",'reverse')
@@ -321,7 +321,7 @@ for i = 1:length(model_longname)
         'MarkerEdgeColor', colors(i,:), 'DisplayName', model_longname{i},'LineWidth', 1.5);
 end
 plot(xfit5, yfit5, 'k--', 'DisplayName','Regression','LineWidth', 2);
-xlabel('K_{mFe} (nmol/m^{3})')
+xlabel('K_{mFe} (nmol m^{-3})')
 ylabel('Dissolved iron ranking')
 ylim([0 14])
 set(gca,"YDir",'reverse')
@@ -371,4 +371,4 @@ grid on;
 text(0.4,-1.5, '(i)', 'FontWeight', 'bold', 'FontSize', 14);
 text(2, 12, ['T-test\newlinep = ', num2str(p9, '%.4f')], 'HorizontalAlignment', 'center')
 
-print(figs9,'D:\OneDrive - Australian National University\PhD\Project2\Model comparison\Figure\figs9','-djpeg','-r300');
+print(fig15,'D:\OneDrive - Australian National University\PhD\Project2\Model comparison\Figure\fig15','-djpeg','-r600');

@@ -162,7 +162,7 @@ m_grid('xtick',6,'xticklabel',[],'tickdir','out','ytick',[],'linest','none','xax
 title('WOA','FontSize',12)
 clim([0 30])
 c=colorbar;
-c.Label.String = 'Nitrate (mmol/m^{3})';
+c.Label.String = 'Nitrate (mmol m^{-3})';
 c.Label.FontSize = 11;
 set(c,'Location','southoutside','Position',[0.14,0.65,0.1,0.02])
 
@@ -185,10 +185,10 @@ for s = 1:length(splist)
 end
 c1=colorbar;
 set(c1,'Location','eastoutside','Position',[0.82, 0.12, 0.01, 0.25])
-c1.Label.String = 'Nitrate (mmol/m^{3})';
+c1.Label.String = 'Nitrate (mmol m^{-3})';
 c1.Label.FontSize = 11;
 
-print(fig3,'D:\OneDrive - Australian National University\PhD\Project2\Model comparison\Figure\fig3','-djpeg','-r300');
+print(fig3,'D:\OneDrive - Australian National University\PhD\Project2\Model comparison\Figure\fig3','-djpeg','-r600');
 
 % Calculate mean bias error for 4 zones and total SO
 lon2p = lon2;
@@ -228,11 +228,11 @@ b=bar(mbe_no3_os);
 for c = 1:length(b)
     b(c).FaceColor = col(c,:);
 end
-ylabel('Mean Bias Error (mmol/m^{3})')
+ylabel('Mean Bias Error (mmol m^{-3})')
 set(gca,'XTickLabel',model_longname,'FontSize',12)
 legend({'SO','STZ','SAZ','PFZ','AZ'},'Location','southeast')
 
-print(fig4,'D:\OneDrive - Australian National University\PhD\Project2\Model comparison\Figure\fig4','-djpeg','-r300');
+print(fig4,'D:\OneDrive - Australian National University\PhD\Project2\Model comparison\Figure\fig4','-djpeg','-r600');
 
 % Taylor Diagram
 % Calculation of different parameters
@@ -356,4 +356,4 @@ subplot(2,3,5)
 t5=title('Surface nitrate in AZ','FontSize',14);
 t5.Position(2) = t5.Position(2) + 1;
 
-print(figs2,'D:\OneDrive - Australian National University\PhD\Project2\Model comparison\Figure\figs2','-djpeg','-r300');
+print(figs2,'D:\OneDrive - Australian National University\PhD\Project2\Model comparison\Figure\figs2','-djpeg','-r600');

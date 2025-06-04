@@ -178,7 +178,7 @@ clim([-0.2 1.8])
 c=colorbar;
 c.Ticks = -0.2:0.2:1.8;
 c.TickLabels = [0.01, 0.1, 0.2, 0.4, 0.6, 0.8, 1.0, 1.5, 2, 5, 10]; 
-c.Label.String = 'Chlorophyll (mg/m^{3})';
+c.Label.String = 'Chlorophyll (mg m^{-3})';
 c.Label.FontSize = 11;
 set(c,'Location','southoutside','Position',[0.14, 0.65, 0.1, 0.02])
 
@@ -201,10 +201,10 @@ for s = 1:length(splist)
 end
 c1=colorbar;
 set(c1,'Location','eastoutside','Position',[0.82, 0.12, 0.01, 0.25])
-c1.Label.String = 'Chlorophyll (mg/m^{3})';
+c1.Label.String = 'Chlorophyll (mg m^{-3})';
 c1.Label.FontSize = 11;
 
-print(fig1,'D:\OneDrive - Australian National University\PhD\Project2\Model comparison\Figure\fig1','-djpeg','-r300');
+print(fig1,'D:\OneDrive - Australian National University\PhD\Project2\Model comparison\Figure\fig1','-djpeg','-r600');
 
 % Calculate mean bias error for 4 zones and total SO
 lon2p = lon2;
@@ -244,11 +244,11 @@ b=bar(mbe_chl_os);
 for c = 1:length(b)
     b(c).FaceColor = col(c,:);
 end
-ylabel('Mean Bias Error (mg/m^{3})')
+ylabel('Mean Bias Error (mg m^{-3})')
 set(gca,'XTickLabel',model_longname,'FontSize',12)
 legend({'SO','STZ','SAZ','PFZ','AZ'})
 
-print(fig2,'D:\OneDrive - Australian National University\PhD\Project2\Model comparison\Figure\fig2','-djpeg','-r300');
+print(fig2,'D:\OneDrive - Australian National University\PhD\Project2\Model comparison\Figure\fig2','-djpeg','-r600');
 
 % Taylor Diagram
 % Calculation of different parameters
@@ -372,7 +372,7 @@ subplot(2,3,5)
 t5=title('Surface chlorophyll in AZ','FontSize',14);
 t5.Position(2) = t5.Position(2) + 3;
 
-print(figs1,'D:\OneDrive - Australian National University\PhD\Project2\Model comparison\Figure\figs1','-djpeg','-r300');
+print(figs1,'D:\OneDrive - Australian National University\PhD\Project2\Model comparison\Figure\figs1','-djpeg','-r600');
 
 % DCM plotting
 % DCM analysis
@@ -512,11 +512,11 @@ end
 c=colorbar;
 c.Ticks = -0.2:0.2:1.8;
 c.TickLabels = [0.01, 0.1, 0.2, 0.4, 0.6, 0.8, 1.0, 1.5, 2, 5, 10]; 
-c.Label.String = 'Chlorophyll (mg/m^{3})';
+c.Label.String = 'Chlorophyll (mg m^{-3})';
 c.Label.FontSize = 11;
 set(c,'Location','eastoutside','Position',[0.8, 0.4, 0.01, 0.3])
 
-print(fig9,'D:\OneDrive - Australian National University\PhD\Project2\Model comparison\Figure\fig9','-djpeg','-r300');
+print(fig9,'D:\OneDrive - Australian National University\PhD\Project2\Model comparison\Figure\fig9','-djpeg','-r600');
 
 % Plot the number of grids
 dcmgrid = nan(length(dcmlist),5);
@@ -547,4 +547,4 @@ ylabel('Percentage (%)')
 set(gca,'XTickLabel',dcmlist_longname,'FontSize',12)
 legend({'SO','STZ','SAZ','PFZ','AZ'})
 
-print(fig10,'D:\OneDrive - Australian National University\PhD\Project2\Model comparison\Figure\fig10','-djpeg','-r300');
+print(fig10,'D:\OneDrive - Australian National University\PhD\Project2\Model comparison\Figure\fig10','-djpeg','-r600');

@@ -578,7 +578,7 @@ m_grid('xtick',6,'xticklabel',[],'tickdir','out','ytick',[],'linest','none','xax
 title('Copernicus','FontSize',12)
 clim([0 150])
 c=colorbar;
-c.Label.String = 'POC (mg/m^{3})';
+c.Label.String = 'POC (mg m^{-3})';
 c.Label.FontSize = 11;
 set(c,'Location','southoutside','Position',[0.14, 0.65, 0.1, 0.02])
 
@@ -601,10 +601,10 @@ for s = 1:length(model_abbs)
 end
 c1=colorbar;
 set(c1,'Location','eastoutside','Position',[0.82, 0.1, 0.01, 0.25])
-c1.Label.String = 'POC (mg/m^{3})';
+c1.Label.String = 'POC (mg m^{-3})';
 c1.Label.FontSize = 11;
 
-print(fig11,'D:\OneDrive - Australian National University\PhD\Project2\Model comparison\Figure\fig11','-djpeg','-r300');
+print(fig11,'D:\OneDrive - Australian National University\PhD\Project2\Model comparison\Figure\fig11','-djpeg','-r600');
 
 lon2p = lon2;
 lon2p(lon2p>180) = lon2p(lon2p>180) - 360;
@@ -643,11 +643,11 @@ b=bar(mbe_poc);
 for c = 1:length(b)
     b(c).FaceColor = col(c,:);
 end
-ylabel('Mean Bias Error (mg/m^{3})')
+ylabel('Mean Bias Error (mg m^{-3})')
 set(gca,'XTickLabel',model_longname,'FontSize',12)
 legend({'SO','STZ','SAZ','PFZ','AZ'},'Location','northeast')
 
-print(fig12,'D:\OneDrive - Australian National University\PhD\Project2\Model comparison\Figure\fig12','-djpeg','-r300');
+print(fig12,'D:\OneDrive - Australian National University\PhD\Project2\Model comparison\Figure\fig12','-djpeg','-r600');
 
 % Taylor Diagram
 % Calculation of different parameters
@@ -765,7 +765,7 @@ subplot(2,3,5)
 t5=title('Surface POC in AZ','FontSize',14);
 t5.Position(2) = t5.Position(2) + 1;
 
-print(figs5,'D:\OneDrive - Australian National University\PhD\Project2\Model comparison\Figure\figs5','-djpeg','-r300');
+print(figs5,'D:\OneDrive - Australian National University\PhD\Project2\Model comparison\Figure\figs5','-djpeg','-r600');
 
 % Calculate mean profiles for each zone
 for i = 1:length(all_abbs)
@@ -791,9 +791,9 @@ for j = 1:length(rglist)
     end
 end
 
-% POC mean profile (Fig.S7)
+% POC mean profile (Fig.S6)
 splist2=[1;2;3;4;5;7;8;9;10;11;13;14;15;16;17];
-figs7=figure(4);
+figs6=figure(4);
 set(gcf,'Position',[100 100 1200 800])
 for s = 1:length(all_abbs)
     sp=subplot(3,6,splist2(s));
@@ -820,15 +820,15 @@ end
 
 legend({'SO','STZ','SAZ','PFZ','AZ'},'Position',[0.8, 0.10, 0.1, 0.2],'FontSize',12)
 
-annotation('textbox', [0.13 0.45 0.05 0.1], 'String', 'Depth(m)', ...
+annotation('textbox', [0.08 0.45 0.1 0.1], 'String', 'Depth (m)', ...
     'HorizontalAlignment', 'center', 'VerticalAlignment', 'middle', ...
     'EdgeColor', 'none', 'FontSize', 12,'Rotation',90)
 
-annotation('textbox', [0.45 0.05 0.1 0.05], 'String', 'POC(mg/m^{3})', ...
+annotation('textbox', [0.45 0.05 0.1 0.05], 'String', 'POC (mg m^{-3})', ...
     'HorizontalAlignment', 'center', 'VerticalAlignment', 'middle', ...
     'EdgeColor', 'none', 'FontSize', 12)
 
-print(figs7,'D:\OneDrive - Australian National University\PhD\Project2\Model comparison\Figure\figs7','-djpeg','-r300');
+print(figs6,'D:\OneDrive - Australian National University\PhD\Project2\Model comparison\Figure\figs6','-djpeg','-r600');
 
 % Calculate mean profiles for chl
 for i = 1:length(all_abbs)
@@ -854,8 +854,8 @@ for j = 1:length(rglist)
     end
 end
 
-% plot mean chlorophyll profile (Fig.S6)
-figs6=figure(5);
+% plot mean chlorophyll profile (Fig. 14)
+fig14=figure(5);
 set(gcf,'Position',[100 100 1200 800])
 for s = 1:length(all_abbs)
     sp=subplot(3,6,splist2(s));
@@ -882,15 +882,15 @@ end
 
 legend({'SO','STZ','SAZ','PFZ','AZ'},'Position',[0.8, 0.1, 0.1, 0.2],'FontSize',12)
 
-annotation('textbox', [0.13 0.45 0.05 0.1], 'String', 'Depth(m)', ...
+annotation('textbox', [0.08 0.45 0.1 0.1], 'String', 'Depth (m)', ...
     'HorizontalAlignment', 'center', 'VerticalAlignment', 'middle', ...
     'EdgeColor', 'none', 'FontSize', 12,'Rotation',90)
 
-annotation('textbox', [0.45 0.05 0.1 0.05], 'String', 'Chlorophyll(mg/m^{3})', ...
+annotation('textbox', [0.4 0.05 0.2 0.05], 'String', 'Chlorophyll (mg m^{-3})', ...
     'HorizontalAlignment', 'center', 'VerticalAlignment', 'middle', ...
     'EdgeColor', 'none', 'FontSize', 12)
 
-print(figs6,'D:\OneDrive - Australian National University\PhD\Project2\Model comparison\Figure\figs6','-djpeg','-r300');
+print(fig14,'D:\OneDrive - Australian National University\PhD\Project2\Model comparison\Figure\fig14','-djpeg','-r600');
 
 % Calculate mean integrated phyc, zooc, and detoc in top 100m (Tab.S6-8)
 for i = 1:length(all_abbs)

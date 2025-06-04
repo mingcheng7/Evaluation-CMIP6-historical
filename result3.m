@@ -156,7 +156,7 @@ title('WOA','FontSize',12)
 clim([0 80])
 c=colorbar;
 c.Ticks = 0:20:80;
-c.Label.String = 'Si (mmol/m^{3})';
+c.Label.String = 'Si (mmol m^{-3})';
 c.Label.FontSize = 11;
 set(c,'Location','southoutside','Position',[0.14, 0.65, 0.1, 0.02])
 
@@ -188,10 +188,10 @@ end
 c1=colorbar;
 c1.Ticks = -80:40:80;
 set(c1,'Location','eastoutside','Position',[0.82, 0.1, 0.01, 0.25])
-c1.Label.String = 'Si (mmol/m^{3})';
+c1.Label.String = 'Si (mmol m^{-3})';
 c1.Label.FontSize = 11;
 
-print(fig5,'D:\OneDrive - Australian National University\PhD\Project2\Model comparison\Figure\figs5','-djpeg','-r300');
+print(fig5,'D:\OneDrive - Australian National University\PhD\Project2\Model comparison\Figure\fig5','-djpeg','-r600');
 
 % Calculate mean bias error for 4 zones and total SO
 lon2p = lon2;
@@ -231,11 +231,11 @@ b=bar(mbe_si_os);
 for c = 1:length(b)
     b(c).FaceColor = col(c,:);
 end
-ylabel('Mean Bias Error (mmol/m^{3})')
+ylabel('Mean Bias Error (mmol m^{-3})')
 set(gca,'XTickLabel',plot_longname,'FontSize',12)
 legend({'SO','STZ','SAZ','PFZ','AZ'})
 
-print(fig6,'D:\OneDrive - Australian National University\PhD\Project2\Model comparison\Figure\fig6','-djpeg','-r300');
+print(fig6,'D:\OneDrive - Australian National University\PhD\Project2\Model comparison\Figure\fig6','-djpeg','-r600');
 
 % Taylor Diagram
 % Calculation of different parameters
@@ -362,4 +362,4 @@ subplot(2,3,5)
 t5=title('Surface silicate in AZ','FontSize',14);
 t5.Position(2) = t5.Position(2) + 0.12;
 
-print(figs3,'D:\OneDrive - Australian National University\PhD\Project2\Model comparison\Figure\figs3','-djpeg','-r300');
+print(figs3,'D:\OneDrive - Australian National University\PhD\Project2\Model comparison\Figure\figs3','-djpeg','-r600');
